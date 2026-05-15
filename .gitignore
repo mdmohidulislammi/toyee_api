@@ -1,0 +1,8 @@
+.env
+__pycache__/
+build/
+develop-eggs/
+dist/
+downloads/
+lib/
+frontend
