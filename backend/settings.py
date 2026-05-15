@@ -39,7 +39,12 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 
 # CORS
-CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+]
+if os.environ.get('FRONTEND_URL'):
+    CORS_ALLOWED_ORIGINS.append(os.environ['FRONTEND_URL'])
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
